@@ -1,15 +1,14 @@
 
-const emojis = require('./emojis.json');
-const rgx = new RegExp(Object.keys(emojis).join('|'), 'g');
+const emojis = require('./emojis.js');
+const rgx = new RegExp(Object.keys(emojis).join('|'), 'gu');
 
 const regexerExec = (text, method, cb) => {
-    console.log('x\n', rgx)
     return text[method](rgx, cb);
 };
 
 exports.changeEmojiForDesc = (text) => {
     return regexerExec(text, 'replace', (emoji) => {
-        return `<${emojis[emoji]}>`
+        return `<${emojis[emoji]}>`;
     });
 };
 
@@ -18,12 +17,10 @@ exports.extractEmoji = (text) => {
 };
 
 exports.getEmojis = (text) => {
-    let list = [];
-    regexerExec(text, 'match', (emoji) => {
-        list.push(emojis[emoji]);
-    });
-
-    return list;
+    return regexerExec(text, 'match')
+        .map((emoji) => {
+            return emojis[emoji];
+        });
 };
 
 exports.fullObject = (text) => ({

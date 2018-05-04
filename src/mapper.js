@@ -35,6 +35,8 @@ const createFile = (dom) => {
         }
     }
 
-    writeFile('./src/emojis.json', JSON.stringify(emojiMap, null, 2), 'utf8', process.exit);
+    let file = 'module.exports = ' + JSON.stringify(emojiMap, null, 2);
+    file = file.replace(/\\\\/g, '\\');
+    writeFile('./src/emojis.js', file, 'utf8', process.exit);
 };
 
