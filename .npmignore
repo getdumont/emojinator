@@ -1,0 +1,8 @@
+tests/**/*.spec.js
+config.jest.json
+.travis.yml
+.vscode
+coverage
+.eslintrc
+.gitignore
+.git

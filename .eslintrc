@@ -1,0 +1,30 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "experimentalObjectRestSpread": true
+    },
+    "globals": {
+        "global": true,
+        "exports": true,
+        "require": true,
+        "jest": true,
+        "expect": true,
+        "it": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "describe": true,
+        "console": true,
+        "module": true,
+        "Promise": true,
+        "process": true
+    },
+    "rules": {
+        "no-var": 1,
+        "no-console": 1,
+        "semi": 2,
+        "quotes": [2, "single"],
+        "indent": ["error", 4]
+    }
+}

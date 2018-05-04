@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - '8'
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run test
+  - npm run lint
+after_success:
+  - npm run coveralls
+deploy:
+  provider: npm
+  email: guidiego.expgames@gmail.com
+  api_key:
+    secure: qQ8PKaJ+A5QKvANF8Z4uTwLm4WQ/TAsTKNMCLl+UXnVVOS1vh8e0IVIxgIxBMb+1nYCvUj4S5BR7fwBi3TdGDAne94LRqcpsH0fpFVzzkgoDzLXwxOazfvXhmkKe7rDtICoQ6umjIhmqdXr1CS2IccuKkawFmJb1qO8PMOLOMVLNRiF14BeL/c9bku2jv3n6O13pbTEo7bs+XoGmfdpReqv9mWWLSZudSZww030DhUjrQQ/UX46dNLFn1VzUfIlf2yKUIlmprcS8oOSmBYue5dcS89XU2Hpevm3D4IVPiLkbY/5dY+VGAPEzPyBSDjKyoVLQ7pFBnWGTA1rMgj5XVKkj4Il6xoOz7UtM2Pl5ma2+psrQhWpgVvd/UWuRc4cEtZh4QlI/+RL5w3yW0Bf3uedW1l025ZzyDosCgP3i7oJTyAIAiSaez1Snp8Q0YlnrjiTogelC9/tTdHWkOjZyI1Be9o5cHNexnZ44xFYAu2e/6XX3Djt/rrRkk/z2IETQ6/DNDyILy7tFt52VkGdphruovQxAG0P8+UArgSUJmXYosgaVMji3itwa9VS12eaAqsZFXLUatZ+EEyqz4wfF3WjDDKVLtECVTJ9SBR3TZaOedc/M6Rm05yqKxTR84dPYwwRRUJ//B3p4CkGoGVTl7EX7jJBbU3edXxvirPH+0pw=
+  on:
+    tags: true
+    repo: getdumont/emoji-parser

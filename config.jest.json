@@ -1,0 +1,36 @@
+{
+    "roots": [
+      "tests"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+        "<rootDir>/node_modules/",
+        "<rootDir>/src/mapper.js",
+        "<rootDir>/src/emojis.json"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 99,
+        "branches": 99,
+        "functions": 99,
+        "lines": 99
+      },
+      "each": {
+        "statements": 99,
+        "branches": 99,
+        "functions": 99,
+        "lines": 99
+      }
+    }
+  }

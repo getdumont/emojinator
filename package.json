@@ -1,0 +1,32 @@
+{
+  "name": "emoji-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/parser.js",
+  "scripts": {
+    "create-emojis": "node src/mapper",
+    "test": "jest --config config.jest.json --coverage",
+    "test:dev": "jest --config config.jest.json --watch",
+    "lint": "eslint --config .eslintrc src",
+    "lint:fix": "eslint --config .eslintrc src --fix",
+    "coveralls": "cat coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getdumont/emoji-parser.git"
+  },
+  "author": "Guilherme Diego <guilherme.albino.francisco@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getdumont/emoji-parser/issues"
+  },
+  "homepage": "https://github.com/getdumont/emoji-parser#readme",
+  "dependencies": {
+    "jsdom": "^11.10.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "eslint": "^4.19.1",
+    "jest": "^22.4.3"
+  }
+}
