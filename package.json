@@ -1,7 +1,7 @@
 {
-  "name": "emoji-parser",
+  "name": "emojinator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A module to extract emoji as data for data analyze",
   "main": "src/parser.js",
   "scripts": {
     "create-emojis": "node src/mapper",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getdumont/emoji-parser.git"
+    "url": "git+https://github.com/getdumont/emojinator.git"
   },
   "author": "Guilherme Diego <guilherme.albino.francisco@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/getdumont/emoji-parser/issues"
+    "url": "https://github.com/getdumont/emojinator/issues"
   },
-  "homepage": "https://github.com/getdumont/emoji-parser#readme",
+  "homepage": "https://github.com/getdumont/emojinator#readme",
   "dependencies": {
     "jsdom": "^11.10.0"
   },

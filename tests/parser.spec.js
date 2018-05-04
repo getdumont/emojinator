@@ -1,16 +1,16 @@
-const emojiParser = require('../src/parser');
+const emojinator = require('../src/parser');
 const PHRASE_SAMPLE = 'Test Phrase 😂😂😩😁😊💪💙';
 const PHRASE_SAMPLE_SM = 'TP 💪💙';
 // @TODO const PHRASE_SAMPLE = 'Test Phrase 😂😂😩😁😊🤔💪💙';
 
-describe('src/parser (emojiParser)', () => {
+describe('src/parser (emojinator)', () => {
     it('#extractEmoji', () => {
-        const resp = emojiParser.extractEmoji(PHRASE_SAMPLE);
+        const resp = emojinator.extractEmoji(PHRASE_SAMPLE);
         expect(resp).toBe('Test Phrase ');
     });
 
     it('#getEmojis', () => {
-        const resp = emojiParser.getEmojis(PHRASE_SAMPLE);
+        const resp = emojinator.getEmojis(PHRASE_SAMPLE);
         expect(resp).toEqual([
             "face-with-tears-of-joy",
             "face-with-tears-of-joy",
@@ -23,7 +23,7 @@ describe('src/parser (emojiParser)', () => {
     });
 
     it('#changeEmojiForDesc', () => {
-        const resp = emojiParser.changeEmojiForDesc(PHRASE_SAMPLE_SM);
+        const resp = emojinator.changeEmojiForDesc(PHRASE_SAMPLE_SM);
         const phraseSample = 'TP <flexed-biceps><blue-heart>';
 
         expect(resp).toEqual(phraseSample);
@@ -34,14 +34,14 @@ describe('src/parser (emojiParser)', () => {
         const fakeR2 = 'fakeR2';
         const fakeR3 = 'fakeR3';
 
-        emojiParser.extractEmoji = jest.fn().mockReturnValue(fakeR1);
-        emojiParser.getEmojis = jest.fn().mockReturnValue(fakeR2);
-        emojiParser.changeEmojiForDesc = jest.fn().mockReturnValue(fakeR3);
+        emojinator.extractEmoji = jest.fn().mockReturnValue(fakeR1);
+        emojinator.getEmojis = jest.fn().mockReturnValue(fakeR2);
+        emojinator.changeEmojiForDesc = jest.fn().mockReturnValue(fakeR3);
 
-        const resp = emojiParser.fullObject(PHRASE_SAMPLE);
-        expect(emojiParser.extractEmoji).toBeCalledWith(PHRASE_SAMPLE);
-        expect(emojiParser.getEmojis).toBeCalledWith(PHRASE_SAMPLE);
-        expect(emojiParser.changeEmojiForDesc).toBeCalledWith(PHRASE_SAMPLE);
+        const resp = emojinator.fullObject(PHRASE_SAMPLE);
+        expect(emojinator.extractEmoji).toBeCalledWith(PHRASE_SAMPLE);
+        expect(emojinator.getEmojis).toBeCalledWith(PHRASE_SAMPLE);
+        expect(emojinator.changeEmojiForDesc).toBeCalledWith(PHRASE_SAMPLE);
         expect(resp).toEqual({
             rawText: PHRASE_SAMPLE,
             preClear: fakeR3,
