@@ -25,6 +25,7 @@
         "no-console": 1,
         "semi": 2,
         "quotes": [2, "single"],
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "no-useless-escape": 0
     }
 }
