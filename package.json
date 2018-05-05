@@ -1,10 +1,13 @@
 {
   "name": "emojinator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module to extract emoji as data for data analyze",
   "main": "src/parser.js",
   "scripts": {
-    "create-emojis": "node src/mapper",
+    "tim-scrap": "node src/mapper https://apps.timwhitlock.info/emoji/tables/unicode 1",
+    "unicode-scrap": "node src/mapper https://unicode.org/emoji/charts/full-emoji-list.html 2",
+    "create-emojis": "npm run tim-scrap && npm run unicode-scrap",
+
     "test": "jest --config config.jest.json --coverage",
     "test:dev": "jest --config config.jest.json --watch",
     "lint": "eslint --config .eslintrc src",

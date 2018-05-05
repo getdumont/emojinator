@@ -3,7 +3,7 @@ const https = require('https');
 const { JSDOM } = require('jsdom');
 const { writeFile } = require('fs');
 
-https.get('https://apps.timwhitlock.info/emoji/tables/unicode', (res) => {
+https.get(process.argv[2], (res) => {
     let body = '';
     res.on('data', function(chunk) {
         body += chunk;
@@ -37,6 +37,6 @@ const createFile = (dom) => {
 
     let file = 'module.exports = ' + JSON.stringify(emojiMap, null, 2);
     file = file.replace(/\\\\/g, '\\');
-    writeFile('./src/emojis.js', file, 'utf8', process.exit);
+    writeFile(`./src/emojis/data_${process.argv[3]}.js`, file, 'utf8', process.exit);
 };
 

@@ -1,7 +1,6 @@
 const emojinator = require('../src/parser');
-const PHRASE_SAMPLE = 'Test Phrase 😂😂😩😁😊💪💙';
 const PHRASE_SAMPLE_SM = 'TP 💪💙';
-// @TODO const PHRASE_SAMPLE = 'Test Phrase 😂😂😩😁😊🤔💪💙';
+const PHRASE_SAMPLE = 'Test Phrase 😂😂😩😁😊🤔💪💙';
 
 describe('src/parser (emojinator)', () => {
     it('#extractEmoji', () => {
@@ -12,13 +11,14 @@ describe('src/parser (emojinator)', () => {
     it('#getEmojis', () => {
         const resp = emojinator.getEmojis(PHRASE_SAMPLE);
         expect(resp).toEqual([
-            "face-with-tears-of-joy",
-            "face-with-tears-of-joy",
-            "weary-face",
-            "grinning-face-with-smiling-eyes",
-            "smiling-face-with-smiling-eyes",
-            "flexed-biceps",
-            "blue-heart",
+            'face-with-tears-of-joy',
+            'face-with-tears-of-joy',
+            'weary-face',
+            'beaming-face-with-smiling-eyes',
+            'smiling-face-with-smiling-eyes',
+            'thinking-face',
+            'flexed-biceps',
+            'blue-heart',
         ]);
     });
 
