@@ -22,6 +22,11 @@ describe('src/parser (emojinator)', () => {
         ]);
     });
 
+    it('#getEmojis should parse non emoji phrase', () => {
+        const resp = emojinator.getEmojis('A phrase without emoji');
+        expect(resp).toEqual([]);
+    });
+
     it('#changeEmojiForDesc', () => {
         const resp = emojinator.changeEmojiForDesc(PHRASE_SAMPLE_SM);
         const phraseSample = 'TP <flexed-biceps><blue-heart>';

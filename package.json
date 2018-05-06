@@ -1,6 +1,6 @@
 {
   "name": "emojinator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A module to extract emoji as data for data analyze",
   "main": "src/parser.js",
   "scripts": {

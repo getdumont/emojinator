@@ -16,7 +16,7 @@ exports.extractEmoji = (text) => {
 };
 
 exports.getEmojis = (text) => {
-    return regexerExec(text, 'match')
+    return (regexerExec(text, 'match') || [])
         .map((emoji) => {
             return emojis[emoji];
         });
